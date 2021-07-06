@@ -1,6 +1,6 @@
 import {
-  onStorageChange,
   getStorageItem,
+  onStorageChange,
   setStorageItem,
 } from "./localStorageSubscribe";
 
@@ -66,7 +66,9 @@ export class LockManager {
       ifAvailable: false,
       steal: false,
     };
-    this._init();
+    if (typeof window !== "undefined") {
+      this._init();
+    }
   }
 
   private _requestLockQueueMap(): RequestQueueMap {
@@ -513,9 +515,8 @@ export class LockManager {
       const requestLockQueueMap = this._requestLockQueueMap();
       this._filterLockQueueMap(requestLockQueueMap);
 
-      let newHeldLockSet: LocksInfo = this._cleanThisClientLockAndRequests(
-        requestLockQueueMap
-      );
+      let newHeldLockSet: LocksInfo =
+        this._cleanThisClientLockAndRequests(requestLockQueueMap);
 
       this._storeHeldLockSetAndRequestLockQueueMap(
         newHeldLockSet,

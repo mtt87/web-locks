@@ -1,7 +1,7 @@
 {
-  "name": "navigator.locks",
+  "name": "@mtt/navigator.locks",
   "description": "support Web Locks API work in major browsers",
-  "version": "0.3.0",
+  "version": "0.0.1",
   "main": "dist/index.cjs.js",
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
@@ -35,6 +35,7 @@
     "@types/jest": "^26.0.23",
     "git-cz": "^4.7.5",
     "jest": "^27.0.1",
+    "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.34.1",
     "rollup-plugin-terser": "^7.0.2",
@@ -45,6 +46,5 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "jsdom"
-  },
-  "dependencies": {}
+  }
 }
